@@ -7,7 +7,7 @@ class Users extends CI_Controller
         // loads model manually
         // $this->load->model('user_model');
 
-        $data['results'] = $this->user_model->get_users($user_id);
+        $data['results'] = $this->user_model->get_users($user_id, 'rico');
 
         $this->load->view('user_view', $data);
     }
