@@ -7,12 +7,8 @@ class Users extends CI_Controller
         // loads model manually
         // $this->load->model('user_model');
 
-        $result = $this->user_model->get_users();
+        $data['results'] = $this->user_model->get_users();
 
-        foreach ($result as $object) {
-            echo $object->id . " - ";
-            echo $object->username . " - ";
-            echo $object->password . "<br>";
-        }
+        $this->load->view('user_view', $data);
     }
 }
