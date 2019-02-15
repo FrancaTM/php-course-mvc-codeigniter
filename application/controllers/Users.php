@@ -22,4 +22,16 @@ class Users extends CI_Controller
             'password' => $password
         ]);
     }
+
+    public function update()
+    {
+        $id = 3;
+        $username = "will i am";
+        $password = "not so secret";
+
+        $this->user_model->update_users([
+            'username' => $username,
+            'password' => $password
+        ], $id);
+    }
 }

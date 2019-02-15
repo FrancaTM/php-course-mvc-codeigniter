@@ -36,4 +36,10 @@ class User_model extends CI_Model
     {
         $this->db->insert('users', $data);
     }
+
+    public function update_users($data, $id)
+    {
+        $this->db->where(['id' => $id]);
+        $this->db->update('users', $data);
+    }
 }
