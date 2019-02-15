@@ -8,11 +8,13 @@
 
 <h1>
 <?php
-foreach ($results as $object) {
-    echo $object->id . " - ";
-    echo $object->username . " - ";
-    echo $object->password . "<br>";
-}
+echo $results;
+
+// foreach ($results as $object) {
+//     echo $object->id . " - ";
+//     echo $object->username . " - ";
+//     echo $object->password . "<br>";
+// }
 ?>
 </h1>
 

@@ -4,8 +4,11 @@ class User_model extends CI_Model
 {
     public function get_users()
     {
-        $query = $this->db->get('users');
-        return $query->result();
+        // $query = $this->db->get('users');
+        $query = $this->db->query("SELECT * FROM users");
+
+        // return $query->num_rows(); // this will give the rows count
+        return $query->num_fields(); // this will give the columns number
 
         // loads database automatically
         // $config['hostname'] = 'localhost';
