@@ -31,4 +31,9 @@ class User_model extends CI_Model
         // $connection = $this->load->database($config);
         // $connection_2 = $this->load->database($config_2);
     }
+
+    public function create_users($data)
+    {
+        $this->db->insert('users', $data);
+    }
 }
