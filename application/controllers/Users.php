@@ -34,4 +34,10 @@ class Users extends CI_Controller
             'password' => $password
         ], $id);
     }
+
+    public function delete()
+    {
+        $id = 3;
+        $this->user_model->delete_users($id);
+    }
 }
