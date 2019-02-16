@@ -19,7 +19,7 @@ class Users extends CI_Controller
 
         $this->user_model->create_users([
             'username' => $username,
-            'password' => $password
+            'password' => $password,
         ]);
     }
 
@@ -31,7 +31,7 @@ class Users extends CI_Controller
 
         $this->user_model->update_users([
             'username' => $username,
-            'password' => $password
+            'password' => $password,
         ], $id);
     }
 
@@ -39,5 +39,11 @@ class Users extends CI_Controller
     {
         $id = 3;
         $this->user_model->delete_users($id);
+    }
+
+    public function login()
+    {
+        // echo $_POST['username']; // regular php
+        echo $this->input->post('username'); // ci
     }
 }
