@@ -35,6 +35,19 @@
 </div>
 
 <div class"form_group">
+<?php echo form_label('Confirm password'); ?>
+
+<?php $data = array(
+    'class' => 'form-control',
+    'name' => 'confirm_password',
+    'placeholder' => 'Confirm password',
+);
+?>
+
+<?php echo form_password($data); ?>
+</div>
+
+<div class"form_group">
 
 <?php $data = array(
     'class' => 'btn btn-primary',
