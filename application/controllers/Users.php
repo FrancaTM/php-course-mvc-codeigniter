@@ -53,6 +53,9 @@ class Users extends CI_Controller
             $data = array(
                 'errors' => validation_errors(),
             );
+
+            $this->session->set_flashdata($data);
+            redirect('home');
         }
     }
 }
