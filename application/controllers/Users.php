@@ -43,8 +43,19 @@ class Users extends CI_Controller
 
     public function register()
     {
-        $data['main_view'] = 'users/register_view';
-        $this->load->view('layouts/main', $data);
+        $this->form_validation->set_rules('fisrt_name', 'First Name', 'trim|required|min_length[5]');
+        $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|min_length[5]');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|min_length[5]');
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[3]');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]');
+        $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|min_length[3]|matches[password]');
+
+        if ($this->form_validation->run() == false) {
+            $data['main_view'] = 'users/register_view';
+            $this->load->view('layouts/main', $data);
+        } else {
+
+        }
     }
 
     public function login()
@@ -82,7 +93,7 @@ class Users extends CI_Controller
 
                 $data['main_view'] = "admin_view";
                 $this->load->view('layouts/main', $data);
-        
+
             } else {
                 $this->session->set_flashdata('login_failed', 'Sorry! You are not logged in');
                 redirect('home/index');
