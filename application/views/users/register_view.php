@@ -98,5 +98,3 @@
 </div>
 
 <?php echo form_close(); ?>
-
-<?php endif;?>
